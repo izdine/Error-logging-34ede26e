@@ -8,7 +8,7 @@
 
   <form  method="post">
     <input type="text" id="login"placeholder="login" name=login>
-      <input type="text" id="login"placeholder="password" name=password>
+      <input type="text" id="password"placeholder="password" name=password>
     <input type="submit" name="button" value="in logen"></input>
   </form>
 <?php
@@ -20,11 +20,12 @@
       return 1/$x;
   }
   try {
-      echo inverse(0) . "\n";
+      echo inverse($_POST["login"]) . "\n";
+        echo inverse($_POST["password"]) . "\n";
   }
   catch (Exception $e) {
       error_log($e, 3, "errors.log");
-      echo("<h1>Er is iets fout gegaan!</h1>");
+      echo("<h1>Er is iets fout gegaan!</h1>", $e->getMessage(),);
   }
 
  ?>
